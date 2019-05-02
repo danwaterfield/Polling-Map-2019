@@ -14,7 +14,6 @@ colours = {
     "Brex": "#12B6CF",
     "CHUK": "#999999"
 }
-$('.geo').hide();
 
 $.ajax({
     url: "results.csv",
@@ -36,12 +35,8 @@ $('.hex')[0].addEventListener('load', function() {
                 element.css('fill', colours[results[i][1]])
             }
         }
-
-
     });
 });
-/*
-
 
 $('.geo')[0].addEventListener('load', function() {
     svg = $('.geo').getSVG();
@@ -50,7 +45,6 @@ $('.geo')[0].addEventListener('load', function() {
         element = $(constituencies[index]);
         constituency = element.attr('constituency')
         if (constituency) {
-            console.log(constituency)
             for (i = 0; i < results.length; i++) {
                 if (results[i][0] == constituency) {
                     element.css('fill', colours[results[i][1]])
@@ -58,5 +52,28 @@ $('.geo')[0].addEventListener('load', function() {
             }
         }
     });
-    });
-*/
+});
+
+$('.svg')[0].addEventListener('load', function() {
+    svg = $('.geo').getSVG();
+    hex_orkney = svg.find("[constituency='Orkney and Shetland']").attr('d')
+
+    svg = $('.hex').getSVG();
+
+    geo_orkney = svg.find("[constituency='Orkney and Shetland']").attr('d')
+    var interpolator = flubber.interpolate(hex_orkney, geo_orkney);
+
+    requestAnimationFrame(draw);
+    svg = $('.geo').getSVG();
+    element = svg.find("[constituency='Orkney and Shetland']")
+
+    t = 0
+
+    function draw(time) {
+        t += 0.01
+        element.attr("d", interpolator(t));
+        if (t < 1) {
+            requestAnimationFrame(draw);
+        }
+    }
+});

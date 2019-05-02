@@ -3,21 +3,6 @@
 <style type="text/css">
 .border { stroke: #000000; fill: none; stroke-width: 4; }
 .seat { stroke: lightgrey; fill: #ffffff; stroke-width: 1; }
-.undeclared { }
-.con { fill: #0087dc; }
-.lab { fill: #dc241f; }
-.ld { fill: #fdbb30; }
-.grn { fill: #6ab023; }
-.pc { fill: #008142; }
-.snp { fill: #ffff00; }
-.dup { fill: #d46a4c; }
-.sf { fill: #008800; }
-.sdlp { fill: #99ff66; }
-.ap { fill: #FFCC01; }
-.ukip { fill: #70147a; }
-.uup { fill: #9999ff; }
-.ind { fill: #cccccc; }
-.oth { fill: #999999; }
 </style>
 <g>
 	<g id="constituencies" class="seat">
@@ -612,18 +597,18 @@
 <path fill="null" stroke="null" d="M1184,1710.278L1171.5 1688.627 1146.5 1688.627 1134 1710.278 1146.5 1731.929 1171.5 1731.929z" constituency="Brighton, Kemptown"/>
 <path fill="null" stroke="null" d="M1259,1710.278L1246.5 1688.627 1221.5 1688.627 1209 1710.278 1221.5 1731.929 1246.5 1731.929z" constituency="Eastbourne" style="fill: rgb(250, 166, 26);"/>
 <path fill="null" stroke="null" d="M696.5,1731.929L684 1710.278 659 1710.278 646.5 1731.929 659 1753.58 684 1753.58z" constituency="New Forest East" style="fill: rgb(0, 135, 220);"/>
-<path fill="null" stroke="null" d="M771.5,1731.929L759 1710.278 734 1710.278 721.5 1731.929 734 1753.58 759 1753.58z" constituency="Southampton Itchen"/>
+<path fill="null" stroke="null" d="M771.5,1731.929L759 1710.278 734 1710.278 721.5 1731.929 734 1753.58 759 1753.58z" constituency="Southampton, Itchen"/>
 <path fill="null" stroke="null" d="M846.5,1731.929L834 1710.278 809 1710.278 796.5 1731.929 809 1753.58 834 1753.58z" constituency="Meon Valley" style="fill: rgb(0, 135, 220);"/>
 <path fill="null" stroke="null" d="M921.5,1731.929L909 1710.278 884 1710.278 871.5 1731.929 884 1753.58 909 1753.58z" constituency="Portsmouth South" style="fill: rgb(220, 36, 31);"/>
 <path fill="null" stroke="null" d="M996.5,1731.929L984 1710.278 959 1710.278 946.5 1731.929 959 1753.58 984 1753.58z" constituency="Chichester" style="fill: rgb(0, 135, 220);"/>
 <path fill="null" stroke="null" d="M1071.5,1731.929L1059 1710.278 1034 1710.278 1021.5 1731.929 1034 1753.58 1059 1753.58z" constituency="Worthing West" style="fill: rgb(0, 135, 220);"/>
 <path fill="null" stroke="null" d="M1146.5,1731.929L1134 1710.278 1109 1710.278 1096.5 1731.929 1109 1753.58 1134 1753.58z" constituency="Hove" style="fill: rgb(220, 36, 31);"/>
-<path fill="null" stroke="null" d="M734,1753.58L721.5 1731.929 696.5 1731.929 684 1753.58 696.5 1775.231 721.5 1775.231z" constituency="Southampton Test"/>
+<path fill="null" stroke="null" d="M734,1753.58L721.5 1731.929 696.5 1731.929 684 1753.58 696.5 1775.231 721.5 1775.231z" constituency="Southampton, Test"/>
 <path fill="null" stroke="null" d="M809,1753.58L796.5 1731.929 771.5 1731.929 759 1753.58 771.5 1775.231 796.5 1775.231z" constituency="Eastleigh" style="fill: rgb(0, 135, 220);"/>
 <path fill="null" stroke="null" d="M884,1753.58L871.5 1731.929 846.5 1731.929 834 1753.58 846.5 1775.231 871.5 1775.231z" constituency="Gosport" style="fill: rgb(0, 135, 220);"/>
 <path fill="null" stroke="null" d="M696.5,1775.231L684 1753.58 659 1753.58 646.5 1775.231 659 1796.882 684 1796.882z" constituency="New Forest West" style="fill: rgb(0, 135, 220);"/>
 <path fill="null" stroke="null" d="M846.5,1775.231L834 1753.58 809 1753.58 796.5 1775.231 809 1796.882 834 1796.882z" constituency="Fareham" style="fill: rgb(0, 135, 220);"/>
-<path fill="null" stroke="null" d="M771.5,1818.533L759 1796.882 734 1796.882 721.5 1818.533 734 1840.184 759 1840.184z" constituency="Isle Of Wight"/>
+<path fill="null" stroke="null" d="M771.5,1818.533L759 1796.882 734 1796.882 721.5 1818.533 734 1840.184 759 1840.184z" constituency="Isle of Wight"/>
 <path fill="null" stroke="null" d="M696.5,1428.815L684 1407.164 659 1407.164 646.5 1428.815 659 1450.466 684 1450.466z" constituency="Cheltenham" style="fill: rgb(0, 135, 220);"/>
 <path fill="null" stroke="null" d="M659,1450.466L646.5 1428.815 621.5 1428.815 609 1450.466 621.5 1472.117 646.5 1472.117z" constituency="Tewkesbury" style="fill: rgb(0, 135, 220);"/>
 <path fill="null" stroke="null" d="M621.5,1472.117L609 1450.466 584 1450.466 571.5 1472.117 584 1493.768 609 1493.768z" constituency="Forest of Dean"/>
