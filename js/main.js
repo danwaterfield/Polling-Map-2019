@@ -44,6 +44,7 @@ $('.geo')[0].addEventListener('load', function() {
     $(constituencies).each(function(index) {
         element = $(constituencies[index]);
         constituency = element.attr('constituency')
+
         if (constituency) {
             for (i = 0; i < results.length; i++) {
                 if (results[i][0] == constituency) {
@@ -53,7 +54,7 @@ $('.geo')[0].addEventListener('load', function() {
         }
     });
 });
-
+/*
 $('.svg')[0].addEventListener('load', function() {
     svg = $('.geo').getSVG();
     hex_orkney = svg.find("[constituency='Orkney and Shetland']").attr('d')
@@ -76,4 +77,4 @@ $('.svg')[0].addEventListener('load', function() {
             requestAnimationFrame(draw);
         }
     }
-});
+});*/
