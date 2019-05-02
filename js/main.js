@@ -37,6 +37,7 @@ $('.hex')[0].addEventListener('load', function() {
             }
         }
 
+
     });
 });
 /*
