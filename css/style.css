@@ -1,3 +1,7 @@
 object {
 	margin: 30px;
 }
+
+.geo {
+	display: none !important;
+}
