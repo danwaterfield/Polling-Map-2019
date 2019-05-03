@@ -25,6 +25,7 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
+  <g id='scene'> 
   <defs
      id="defs4034" />
   <sodipodi:namedview
@@ -7847,19 +7848,12 @@
      title="Northampton North"
      data-regions="E14000861"
      style="cursor:pointer;stroke:#d3d3d3;stroke-opacity:1;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none" />
-  <g
-     inkscape:groupmode="layer"
-     id="layer1"
-     inkscape:label="Divisions" />
+     <g id="divisions">
   <path
      style="fill:none;fill-rule:evenodd;stroke:#d3d3d3;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
      d="m 374.36515,324 13.85641,-8 v 0 0 l -0.007,-16 13.8636,-8 v -16 l 13.84922,-8 v 0"
      id="path4848"
      inkscape:connector-curvature="0" />
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="Regions">
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 374.36515,324 13.85641,-8 v -16 l 13.8566,-8 v -16 l 13.85621,-8"
@@ -8007,5 +8001,6 @@
        d="m 540.63485,804 13.85603,-8"
        id="path688"
        inkscape:connector-curvature="0" />
+   </g>
   </g>
 </svg>

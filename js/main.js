@@ -1,11 +1,10 @@
 var svgholder = $('body').find("object");
-
 colours = {
     "C": "#0087DC",
     "DUP": "#D46A4C",
     "Green": "#6AB023",
-    "Ind": "#cccccc",
-    "Speaker": "#cccccc",
+    "Ind": "#939393",
+    "Speaker": "#939393",
     "Lab": "#DC241f",
     "LD": "#FAA61A",
     "PC": "#008142",
@@ -23,7 +22,12 @@ $.ajax({
     }
 })
 
+
 $('.map')[0].addEventListener('load', function() {
+    svgPanZoom('.map', {
+        maxZoom: 3
+    });
+
     svg = $('.map').getSVG();
     constituencies = $(svg.find('path'));
     $(constituencies).each(function(index) {
@@ -35,4 +39,5 @@ $('.map')[0].addEventListener('load', function() {
             }
         }
     });
+
 });
