@@ -57,11 +57,13 @@ beforePan = function(oldPan, newPan) {
 
 $('.map')[0].addEventListener('load', function() {
     //Sets up Map pan
-    svgPanZoom('.map', {
-        minZoom: 0.7,
+    map = svgPanZoom('.map', {
+        minZoom: 0.9,
         maxZoom: 3,
         beforePan: beforePan
     });
+    map.zoom(0.9)
+
 
     //Colours in the Map
     svg = $('.map').getSVG();
