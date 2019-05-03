@@ -1,5 +1,3 @@
-var svgholder = $('body').find("object");
-
 colours = {
     "C": "#0087DC",
     "DUP": "#D46A4C",
@@ -29,6 +27,7 @@ parties = {
     "CHUK": "Independent Party"
 }
 
+//Loads in a basic csv which has constituencies + parties
 $.ajax({
     url: "results.csv",
     async: false,
@@ -37,6 +36,7 @@ $.ajax({
     }
 })
 
+//Handles the range of the pan
 beforePan = function(oldPan, newPan) {
     gutterWidth = 800;
     gutterHeight = 500;
@@ -56,14 +56,14 @@ beforePan = function(oldPan, newPan) {
 
 
 $('.map')[0].addEventListener('load', function() {
+    //Sets up Map pan
     svgPanZoom('.map', {
         minZoom: 0.7,
         maxZoom: 3,
         beforePan: beforePan
     });
 
-
-
+    //Colours in the Map
     svg = $('.map').getSVG();
     constituencies = $(svg.find('path'));
     $(constituencies).each(function(index) {
@@ -73,25 +73,30 @@ $('.map')[0].addEventListener('load', function() {
         for (i = 0; i < results.length; i++) {
             if (results[i][0] == constituency) {
                 party = results[i][1]
+                element.addClass('location')
                 element.attr('party', party)
                 element.css('fill', colours[party])
             }
         }
 
+        //Handles the data box, info on hover etc.
         element.hover(function() {
             svg = $('.map').getSVG();
-            constituencies = $(svg.find('path'));
+            constituencies = $(svg.find('.location'));
             $(constituencies).each(function(index) {
                 element = $(constituencies[index]);
                 $(element).css('opacity', '1')
             });
-            $('.constituency-name').text($(this).attr('title'))
-            party = $(this).attr('party')
-            $(this).css('opacity', '0.5')
-            $('.constituency-party').text(parties[party])
-            $('.hex-a').css('border-bottom-color', colours[party])
-            $('.hex-b').css('background', colours[party])
-            $('.hex-c').css('border-top-color', colours[party])
+
+            if ($(this).hasClass('location')) {
+                $('.constituency-name').text($(this).attr('title'))
+                party = $(this).attr('party')
+                $(this).css('opacity', '0.5')
+                $('.constituency-party').text(parties[party])
+                $('.hex-a').css('border-bottom-color', colours[party])
+                $('.hex-b').css('background', colours[party])
+                $('.hex-c').css('border-top-color', colours[party])
+            }
         });
     });
 
