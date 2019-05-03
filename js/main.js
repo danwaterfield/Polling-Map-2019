@@ -21,22 +21,18 @@ $.ajax({
     success: function(data) {
         results = $.csv.toArrays(data);
     }
-});
+})
 
-$('.geo')[0].addEventListener('load', function() {
-    svg = $('.geo').getSVG();
-    constituencies = $(svg.find('g#layer2 path'));
+$('.map')[0].addEventListener('load', function() {
+    svg = $('.map').getSVG();
+    constituencies = $(svg.find('path'));
     $(constituencies).each(function(index) {
         element = $(constituencies[index]);
-        constituency = element.text().trim();
-        if (constituency) {
-            console.log(constituency)
-            for (i = 0; i < results.length; i++) {
-                if (results[i][0] == constituency) {
-                    element.css('fill', colours[results[i][1]])
-                }
+        constituency = element.attr('title')
+        for (i = 0; i < results.length; i++) {
+            if (results[i][0] == constituency) {
+                element.css('fill', colours[results[i][1]])
             }
         }
     });
-
 });
