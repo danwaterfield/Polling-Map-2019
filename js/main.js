@@ -73,6 +73,7 @@ $('.map')[0].addEventListener('load', function() {
         for (i = 0; i < results.length; i++) {
             if (results[i][0] == constituency) {
                 party = results[i][1]
+                element.addClass('location')
                 element.attr('party', party)
                 element.css('fill', colours[party])
             }
@@ -80,18 +81,21 @@ $('.map')[0].addEventListener('load', function() {
 
         element.hover(function() {
             svg = $('.map').getSVG();
-            constituencies = $(svg.find('path'));
+            constituencies = $(svg.find('.location'));
             $(constituencies).each(function(index) {
                 element = $(constituencies[index]);
                 $(element).css('opacity', '1')
             });
             $('.constituency-name').text($(this).attr('title'))
-            party = $(this).attr('party')
-            $(this).css('opacity', '0.5')
-            $('.constituency-party').text(parties[party])
-            $('.hex-a').css('border-bottom-color', colours[party])
-            $('.hex-b').css('background', colours[party])
-            $('.hex-c').css('border-top-color', colours[party])
+
+            if ($(this).hasClass('location')) {
+                party = $(this).attr('party')
+                $(this).css('opacity', '0.5')
+                $('.constituency-party').text(parties[party])
+                $('.hex-a').css('border-bottom-color', colours[party])
+                $('.hex-b').css('background', colours[party])
+                $('.hex-c').css('border-top-color', colours[party])
+            }
         });
     });
 
