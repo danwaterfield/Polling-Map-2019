@@ -13,8 +13,6 @@ colours = {
     "CHUK": "#999999"
 }
 
-isDown = false;
-
 parties = {
     "C": "Conservative",
     "DUP": "Democratic Unionist Party",
@@ -28,6 +26,8 @@ parties = {
     "Brex": "Brexit Party",
     "CHUK": "Independent Party"
 }
+
+change_constituency = true;
 
 /*
 RGBA to Hex
@@ -44,10 +44,26 @@ function rgb2hex(rgb) {
 Data Loading
 */
 $.ajax({
-    url: "data/results.csv",
+    url: "data/2017.csv",
     async: false,
     success: function(data) {
-        results = $.csv.toArrays(data);
+        elections_2017 = $.csv.toArrays(data);
+    }
+})
+
+$.ajax({
+    url: "data/2015.csv",
+    async: false,
+    success: function(data) {
+        elections_2015 = $.csv.toArrays(data);
+    }
+})
+
+$.ajax({
+    url: "data/2010.csv",
+    async: false,
+    success: function(data) {
+        elections_2010 = $.csv.toArrays(data);
     }
 })
 
@@ -55,9 +71,15 @@ $.ajax({
     url: "data/elections.csv",
     async: false,
     success: function(data) {
-        elections = $.csv.toArrays(data);
+        elections_data = $.csv.toArrays(data);
     }
 })
+
+previous_elections = {
+    '2017': elections_2017,
+    '2015': elections_2015,
+    '2010': elections_2010
+}
 
 function drawYear(year) {
     svg = $('.map').getSVG();
@@ -65,37 +87,80 @@ function drawYear(year) {
     $(constituencies).each(function(index) {
         element = $(constituencies[index]);
         constituency = element.attr('title')
+        elections = previous_elections[year];
         for (i = 0; i < elections.length; i++) {
-            if (elections[i][0] == year && elections[i][2] == constituency && elections[i][9]) {
-                party = elections[i][9]
+            if (elections[i][0] == constituency) {
+                party = elections[i][1]
                 element.addClass('location')
                 element.attr('party', party)
                 element.css('fill', colours[party])
 
                 //Handles the data box, info on hover etc.
                 element.hover(function() {
+                    $(this).css('opacity', '0.5')
+                    if (change_constituency) {
+                        if ($(this).hasClass('location')) {
+                            $('.constituency-name').text($(this).attr('title'))
+                            party = $(this).attr('party')
+                            $('.constituency-party').text(parties[party])
+                            $('.hex-a').css('border-bottom-color', colours[party])
+                            $('.hex-b').css('background', colours[party])
+                            $('.hex-c').css('border-top-color', colours[party])
+                        }
+                    }
+                }, function() {
+                    $(this).css('opacity', '1')
+                    if (change_constituency) {
+                        $('.constituency-name').text('Constituency Name')
+                        $('.constituency-party').text('Party')
+                        $('.hex-a').css('border-bottom-color', 'lightgrey')
+                        $('.hex-b').css('background', 'lightgrey')
+                        $('.hex-c').css('border-top-color', 'lightgrey')
+                    }
+                });
+
+                //Handles button press
+                element.mousedown(function() {
                     if ($(this).hasClass('location')) {
                         $('.constituency-name').text($(this).attr('title'))
                         party = $(this).attr('party')
-                        $(this).css('opacity', '0.5')
                         $('.constituency-party').text(parties[party])
                         $('.hex-a').css('border-bottom-color', colours[party])
                         $('.hex-b').css('background', colours[party])
                         $('.hex-c').css('border-top-color', colours[party])
                     }
-                }, function() {
-                    $('.constituency-name').text('Constituency Name')
                     $(this).css('opacity', '1')
-                    $('.constituency-party').text('Party')
-                    $('.hex-a').css('border-bottom-color', 'lightgrey')
-                    $('.hex-b').css('background', 'lightgrey')
-                    $('.hex-c').css('border-top-color', 'lightgrey')
+                    party = $(this).attr('party')
+                    colour = darken(colours[party], 0.1)
+                    $(this).css('fill', colour)
+                    $('#data-box').addClass('bigger');
+                    $('#data-box').one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+                        function(event) {
+                            console.log('test')
+                        });
+                    change_constituency = false;
                 });
+                element.mouseup(function() {
+                    $(this).css('opacity', '0.75')
+                    party = $(this).attr('party')
+                    colour = colours[party]
+                    $(this).css('fill', colour)
+                });
+                element.mouseleave(function() {
+                    $(this).css('opacity', '1')
+                    party = $(this).attr('party')
+                    colour = colours[party]
+                    $(this).css('fill', colour)
+                });
+                break;
             }
         }
     });
 }
 
+$('.map')[0].addEventListener('load', function() {
+    drawYear('2017');
+});
 
 /*
 Pan Bounding Range
@@ -159,9 +224,5 @@ $(document).ready(function() {
             beforePan: beforePan
         });
         map.zoom(0.9)
-
-
-        //Colours in the Map
-        drawYear('2017');
     });
 });
