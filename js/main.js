@@ -54,52 +54,69 @@ beforePan = function(oldPan, newPan) {
     return customPan
 }
 
+$(document).ready(function() {
+    //Handles Years Buttons
+    $('.years')[0].addEventListener('load', function() {
+        svg = $('.years').getSVG();
+        years = $(svg.find('.button'));
 
-$('.map')[0].addEventListener('load', function() {
-    //Sets up Map pan
-    map = svgPanZoom('.map', {
-        minZoom: 0.9,
-        maxZoom: 3,
-        beforePan: beforePan
-    });
-    map.zoom(0.9)
-
-
-    //Colours in the Map
-    svg = $('.map').getSVG();
-    constituencies = $(svg.find('path'));
-    $(constituencies).each(function(index) {
-        element = $(constituencies[index]);
-
-        constituency = element.attr('title')
-        for (i = 0; i < results.length; i++) {
-            if (results[i][0] == constituency) {
-                party = results[i][1]
-                element.addClass('location')
-                element.attr('party', party)
-                element.css('fill', colours[party])
-            }
-        }
-
-        //Handles the data box, info on hover etc.
-        element.hover(function() {
-            svg = $('.map').getSVG();
-            constituencies = $(svg.find('.location'));
-            $(constituencies).each(function(index) {
-                element = $(constituencies[index]);
-                $(element).css('opacity', '1')
+        $(years).each(function(index) {
+            element = $(years[index]);
+            element.hover(function() {
+                $(this).css('opacity', '0.5')
+            }, function() {
+                $(this).css('opacity', '1')
             });
 
-            if ($(this).hasClass('location')) {
-                $('.constituency-name').text($(this).attr('title'))
-                party = $(this).attr('party')
-                $(this).css('opacity', '0.5')
-                $('.constituency-party').text(parties[party])
-                $('.hex-a').css('border-bottom-color', colours[party])
-                $('.hex-b').css('background', colours[party])
-                $('.hex-c').css('border-top-color', colours[party])
-            }
         });
     });
 
+    //Handles Main Map
+    $('.map')[0].addEventListener('load', function() {
+        //Sets up Map pan
+        map = svgPanZoom('.map', {
+            minZoom: 0.9,
+            maxZoom: 3,
+            beforePan: beforePan
+        });
+        map.zoom(0.9)
+
+
+        //Colours in the Map
+        svg = $('.map').getSVG();
+        constituencies = $(svg.find('path'));
+        $(constituencies).each(function(index) {
+            element = $(constituencies[index]);
+
+            constituency = element.attr('title')
+            for (i = 0; i < results.length; i++) {
+                if (results[i][0] == constituency) {
+                    party = results[i][1]
+                    element.addClass('location')
+                    element.attr('party', party)
+                    element.css('fill', colours[party])
+
+                    //Handles the data box, info on hover etc.
+                    element.hover(function() {
+                        if ($(this).hasClass('location')) {
+                            $('.constituency-name').text($(this).attr('title'))
+                            party = $(this).attr('party')
+                            $(this).css('opacity', '0.5')
+                            $('.constituency-party').text(parties[party])
+                            $('.hex-a').css('border-bottom-color', colours[party])
+                            $('.hex-b').css('background', colours[party])
+                            $('.hex-c').css('border-top-color', colours[party])
+                        }
+                    }, function() {
+                        $('.constituency-name').text('Constituency Name')
+                        $(this).css('opacity', '1')
+                        $('.constituency-party').text('Party')
+                        $('.hex-a').css('border-bottom-color', 'lightgrey')
+                        $('.hex-b').css('background', 'lightgrey')
+                        $('.hex-c').css('border-top-color', 'lightgrey')
+                    });
+                }
+            }
+        });
+    });
 });

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="78.662842mm"
+   height="23.256897mm"
+   viewBox="0 0 78.662843 23.256897"
+   version="1.1"
+   id="svg1381"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="years.svg">
+  <defs
+     id="defs1375" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="14.501252"
+     inkscape:cy="56.580744"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="778"
+     inkscape:window-x="168"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata1378">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <style>
+    g {
+    cursor: pointer; 
+    }
+  </style>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-30.019895,-73.159546)">
+    <path
+       class="button"
+       sodipodi:type="star"
+       style="fill:#1dd3a7;fill-opacity:1;fill-rule:evenodd;stroke:#d3d3d3;stroke-width:0.5291667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1443"
+       sodipodi:sides="6"
+       sodipodi:cx="40.090427"
+       sodipodi:cy="84.787994"
+       sodipodi:r1="11.322934"
+       sodipodi:r2="9.8059492"
+       sodipodi:arg1="-0.52359878"
+       sodipodi:arg2="0"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 49.896376,79.126527 0,11.322934 -9.805949,5.661468 -9.805948,-5.661467 0,-11.322935 9.805948,-5.661467 z"
+       inkscape:transform-center-y="-1.0926072e-06" />
+    <g class="button">
+    <path
+       sodipodi:type="star"
+       style="fill:#00b6ff;fill-opacity:1;fill-rule:evenodd;stroke:#d3d3d3;stroke-width:0.48736295;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2176"
+       sodipodi:sides="6"
+       sodipodi:cx="62.206982"
+       sodipodi:cy="88.396126"
+       sodipodi:r1="10.404005"
+       sodipodi:r2="9.0101318"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.0471976"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 71.217114,93.598128 -9.010132,5.202003 -9.010133,-5.202003 0,-10.404005 9.010133,-5.202002 9.010132,5.202002 z"
+       inkscape:transform-center-y="-7.110127e-06"
+       transform="matrix(1.0857463,0,0,1.0858044,-7.8619051,-11.206016)"
+       inkscape:transform-center-x="1.6865877e-06" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="53.387089"
+       y="88.596588"
+       id="text2194"><tspan
+         sodipodi:role="line"
+         id="tspan2192"
+         x="53.387089"
+         y="88.596588"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.26458332px">15</tspan></text>
+    </g>
+    <g class="button">
+    <path
+       sodipodi:type="star"
+       style="fill:#f9bc26;fill-opacity:1;fill-rule:evenodd;stroke:#d3d3d3;stroke-width:0.42418894;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2178"
+       sodipodi:sides="6"
+       sodipodi:cx="81.517204"
+       sodipodi:cy="85.857071"
+       sodipodi:r1="9.0304871"
+       sodipodi:r2="7.8206315"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.0471976"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 89.337835,90.372314 -7.820631,4.515244 -7.820631,-4.515244 0,-9.030487 7.820631,-4.515243 7.820632,4.515243 z"
+       transform="matrix(1.2449443,0,0,1.2500182,-22.286315,-22.552235)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="72.964577"
+       y="88.195686"
+       id="text2198"><tspan
+         sodipodi:role="line"
+         id="tspan2196"
+         x="72.964577"
+         y="88.195686"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.26458332px">17</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="33.742775"
+       y="89.064308"
+       id="text2182"><tspan
+         sodipodi:role="line"
+         id="tspan2180"
+         x="33.742775"
+         y="89.064308"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.26458332px">10</tspan></text>
+    <g class="button">
+    <path
+       sodipodi:type="star"
+       style="fill:#e6007c;fill-opacity:1;fill-rule:evenodd;stroke:#d3d3d3;stroke-width:0.46359512;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2219"
+       sodipodi:sides="6"
+       sodipodi:cx="97.801338"
+       sodipodi:cy="75.883926"
+       sodipodi:r1="9.8862638"
+       sodipodi:r2="8.5617552"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.0471976"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 106.36309,80.827058 -8.561752,4.943132 -8.561755,-4.943132 0,-9.886264 8.561755,-4.943131 8.561752,4.943132 z"
+       inkscape:transform-center-x="-4.2807607e-06"
+       transform="matrix(1.1378896,0,0,1.1450043,-12.610479,-2.100985)"
+       inkscape:transform-center-y="1.5607948e-06" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="94.116074"
+       y="85.04985"
+       id="text2223"><tspan
+         sodipodi:role="line"
+         id="tspan2221"
+         x="94.116074"
+         y="85.04985"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.26458332px">...</tspan></text>
+        </g>
+  </g>
+</svg>

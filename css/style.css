@@ -1,15 +1,20 @@
+body {
+	overflow: hidden;
+	background: #e6e6e6;
+}
+
+/*
+Refers to the main Map display
+*/
 .map {
 	touch-action: none;
 	width: 100vw;
 	height: 100vh;
 }
 
-body {
-	overflow: hidden;
-	background: #e6e6e6;
-}
-
-
+/*
+Refers to the data box in the top right
+*/
 #data-box {
 	position: absolute;
 	top: 0;
@@ -20,32 +25,45 @@ body {
 	box-shadow: 0 3px rgba(0,0,0,0.2);
 }
 
+/*
+Refers to the year selection
+*/
+.years {
+	position: absolute;
+	right: 40px;
+	top: 5px;
+	width: 120px;
+}
+
+/*
+Refers to the contents of the data box, the constituency information and hex representation
+*/
+#constituency-info {
+	margin-top: -90px;
+	margin-left: 170px;
+}
+
 .hex {
     margin-left: 30px;
     margin-top: 15px;
 }
 
 .hex-a {
-width: 0;
-border-bottom: 30px solid lightgrey;
-border-left: 52px solid transparent;
-border-right: 52px solid transparent;
+	width: 0;
+	border-bottom: 30px solid lightgrey;
+	border-left: 52px solid transparent;
+	border-right: 52px solid transparent;
 }
 
 .hex-b {
-width: 104px;
-height: 60px;
-background-color: lightgrey;
+	width: 104px;
+	height: 60px;
+	background-color: lightgrey;
 }
 
 .hex-c {
-width: 0;
-border-top: 30px solid lightgrey;
-border-left: 52px solid transparent;
-border-right: 52px solid transparent;
-}
-
-#constituency-info {
-	margin-top: -90px;
-	margin-left: 200px;
+	width: 0;
+	border-top: 30px solid lightgrey;
+	border-left: 52px solid transparent;
+	border-right: 52px solid transparent;
 }
