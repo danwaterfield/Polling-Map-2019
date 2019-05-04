@@ -58,6 +58,7 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-30.019895,-73.159546)">
+     <g class="button">
     <path
        class="button"
        sodipodi:type="star"
@@ -75,6 +76,18 @@
        inkscape:randomized="0"
        d="m 49.896376,79.126527 0,11.322934 -9.805949,5.661468 -9.805948,-5.661467 0,-11.322935 9.805948,-5.661467 z"
        inkscape:transform-center-y="-1.0926072e-06" />
+       <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="33.742775"
+       y="89.064308"
+       id="text2182"><tspan
+         sodipodi:role="line"
+         id="tspan2180"
+         x="33.742775"
+         y="89.064308"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.26458332px">10</tspan></text>
+    </g>
     <g class="button">
     <path
        sodipodi:type="star"
@@ -135,17 +148,6 @@
          y="88.195686"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.26458332px">17</tspan></text>
     </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="33.742775"
-       y="89.064308"
-       id="text2182"><tspan
-         sodipodi:role="line"
-         id="tspan2180"
-         x="33.742775"
-         y="89.064308"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.26458332px">10</tspan></text>
     <g class="button">
     <path
        sodipodi:type="star"
