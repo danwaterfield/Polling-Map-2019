@@ -3,7 +3,9 @@ colours = {
     "DUP": "#D46A4C",
     "Green": "#6AB023",
     "Ind": "#939393",
+    "UKIP": "#70147A",
     "Speaker": "#939393",
+    "SDLP": "#3A9E84",
     "Lab": "#DC241f",
     "LD": "#FAA61A",
     "PC": "#008142",
@@ -30,7 +32,7 @@ parties = {
 change_constituency = true;
 
 /*
-RGBA to Hex
+RGBA to Hex and back
 */
 function rgb2hex(rgb) {
     rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
@@ -39,6 +41,20 @@ function rgb2hex(rgb) {
         ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) +
         ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2) : '';
 }
+
+function hexToRgbA(hex) {
+    var c;
+    if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+        c = hex.substring(1).split('');
+        if (c.length == 3) {
+            c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+        }
+        c = '0x' + c.join('');
+        return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',0.2)';
+    }
+    throw new Error('Bad Hex');
+}
+
 
 /*
 Data Loading
@@ -81,7 +97,65 @@ previous_elections = {
     '2010': elections_2010
 }
 
+current_year = ''
+current_constituency = ''
+
+function drawElection(constituency) {
+    labels = [];
+    data = [];
+    backgroundcolours = [];
+    bordercolours = [];
+    for (i = 1; i < elections_data.length; i++) {
+        if (elections_data[i][0] == current_year) {
+            if (elections_data[i][2] == constituency) {
+                labels.push(elections_data[i][5]);
+                percentage = parseFloat(elections_data[i][7])
+                data.push(percentage);
+                colour = colours[elections_data[i][4]]
+                if (colour) {
+
+                    backgroundcolours.push(hexToRgbA(colour))
+                    bordercolours.push(colour)
+                } else {
+                    backgroundcolours.push('lightgrey')
+                    bordercolours.push('grey')
+                }
+            }
+        }
+    }
+
+    $("#resultsChart").remove();
+    $("#chart").append('<canvas id="resultsChart"></canvas>');
+
+    resultsChart = new Chart($('#resultsChart'), {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: '% of Vote',
+                data: data,
+                backgroundColor: backgroundcolours,
+                borderColor: bordercolours,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+}
+
 function drawYear(year) {
+    current_year = year;
+    if ($('#resultsChart').is(":visible")) {
+        drawElection(current_constituency);
+    }
     svg = $('.map').getSVG();
     constituencies = $(svg.find('path'));
     $(constituencies).each(function(index) {
@@ -128,15 +202,19 @@ function drawYear(year) {
                         $('.hex-a').css('border-bottom-color', colours[party])
                         $('.hex-b').css('background', colours[party])
                         $('.hex-c').css('border-top-color', colours[party])
+                        constituency = $(this).attr('title');
+                        current_constituency = constituency;
+                        drawElection(constituency)
                     }
                     $(this).css('opacity', '1')
                     party = $(this).attr('party')
+                    constituency = $(this).attr('title')
                     colour = darken(colours[party], 0.1)
                     $(this).css('fill', colour)
                     $('#data-box').addClass('bigger');
                     $('#data-box').one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
                         function(event) {
-                            console.log('test')
+                            $('#chart').fadeIn(function() {});
                         });
                     change_constituency = false;
                 });
@@ -166,7 +244,7 @@ $('.map')[0].addEventListener('load', function() {
 Pan Bounding Range
 */
 beforePan = function(oldPan, newPan) {
-    gutterWidth = 800;
+    gutterWidth = 200;
     gutterHeight = 500;
 
     sizes = this.getSizes()
@@ -183,7 +261,6 @@ beforePan = function(oldPan, newPan) {
 }
 
 $(document).ready(function() {
-
     //Handles year buttons
     $('.years')[0].addEventListener('load', function() {
         svg = $('.years').getSVG();
@@ -217,6 +294,9 @@ $(document).ready(function() {
 
     //Handles Main Map
     $('.map')[0].addEventListener('load', function() {
+        $(document).click(function() {
+            console.log('test')
+        });
         //Sets up Map Pan
         map = svgPanZoom('.map', {
             minZoom: 0.9,

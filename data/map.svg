@@ -29,13 +29,13 @@
      inkscape:window-height="709"
      id="namedview688"
      showgrid="false"
-     inkscape:zoom="0.84285714"
-     inkscape:cx="504.48065"
-     inkscape:cy="336.61188"
+     inkscape:zoom="0.297995"
+     inkscape:cx="-314.40387"
+     inkscape:cy="605.07276"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg4030" />
+     inkscape:current-layer="layer1" />
   <metadata
      id="metadata4036">
     <rdf:RDF>
@@ -53,6 +53,10 @@
     cursor: pointer; 
     }
   </style>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="backing" />
   <g
      id="scene">
     <defs

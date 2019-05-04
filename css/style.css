@@ -43,6 +43,12 @@ Refers to the contents of the data box, the constituency information and hex rep
 	height: 400px !important;
 }
 
+#chart {
+	display: none;
+	height: 200px;
+	margin-top: 60px;
+}
+
 #constituency-info {
 	margin-top: -90px;
 	margin-left: 170px;
