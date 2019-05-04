@@ -59,7 +59,7 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-30.019895,-73.159546)">
-     <g class="button">
+     <g class="button" id="2010">
     <path
        sodipodi:type="star"
        style="fill:#1dd3a7;fill-opacity:1;fill-rule:evenodd;stroke:#d3d3d3;stroke-width:0.5291667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -88,7 +88,7 @@
          y="89.064308"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.26458332px">10</tspan></text>
     </g>
-    <g class="button">
+    <g class="button" id="2015">
     <path
        sodipodi:type="star"
        style="fill:#00b6ff;fill-opacity:1;fill-rule:evenodd;stroke:#d3d3d3;stroke-width:0.48736295;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -119,7 +119,7 @@
          y="88.596588"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.26458332px">15</tspan></text>
     </g>
-    <g class="button">
+    <g class="button" id="2017">
     <path
        sodipodi:type="star"
        style="fill:#f9bc26;fill-opacity:1;fill-rule:evenodd;stroke:#d3d3d3;stroke-width:0.42418894;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -148,7 +148,7 @@
          y="88.195686"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.26458332px">17</tspan></text>
     </g>
-    <g class="button">
+    <g class="button" id="2017">
     <path
        sodipodi:type="star"
        style="fill:#e6007c;fill-opacity:1;fill-rule:evenodd;stroke:#d3d3d3;stroke-width:0.46359512;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"

@@ -29,6 +29,9 @@ parties = {
     "CHUK": "Independent Party"
 }
 
+/*
+RGBA to Hex
+*/
 function rgb2hex(rgb) {
     rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
     return (rgb && rgb.length === 4) ? "#" +
@@ -37,17 +40,66 @@ function rgb2hex(rgb) {
         ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2) : '';
 }
 
-
-//Loads in a basic csv which has constituencies + parties
+/*
+Data Loading
+*/
 $.ajax({
-    url: "results.csv",
+    url: "data/results.csv",
     async: false,
     success: function(data) {
         results = $.csv.toArrays(data);
     }
 })
 
-//Handles the range of the pan
+$.ajax({
+    url: "data/elections.csv",
+    async: false,
+    success: function(data) {
+        elections = $.csv.toArrays(data);
+    }
+})
+
+function drawYear(year) {
+    svg = $('.map').getSVG();
+    constituencies = $(svg.find('path'));
+    $(constituencies).each(function(index) {
+        element = $(constituencies[index]);
+        constituency = element.attr('title')
+        for (i = 0; i < elections.length; i++) {
+            if (elections[i][0] == year && elections[i][2] == constituency && elections[i][9]) {
+                party = elections[i][9]
+                element.addClass('location')
+                element.attr('party', party)
+                element.css('fill', colours[party])
+
+                //Handles the data box, info on hover etc.
+                element.hover(function() {
+                    if ($(this).hasClass('location')) {
+                        $('.constituency-name').text($(this).attr('title'))
+                        party = $(this).attr('party')
+                        $(this).css('opacity', '0.5')
+                        $('.constituency-party').text(parties[party])
+                        $('.hex-a').css('border-bottom-color', colours[party])
+                        $('.hex-b').css('background', colours[party])
+                        $('.hex-c').css('border-top-color', colours[party])
+                    }
+                }, function() {
+                    $('.constituency-name').text('Constituency Name')
+                    $(this).css('opacity', '1')
+                    $('.constituency-party').text('Party')
+                    $('.hex-a').css('border-bottom-color', 'lightgrey')
+                    $('.hex-b').css('background', 'lightgrey')
+                    $('.hex-c').css('border-top-color', 'lightgrey')
+                });
+            }
+        }
+    });
+}
+
+
+/*
+Pan Bounding Range
+*/
 beforePan = function(oldPan, newPan) {
     gutterWidth = 800;
     gutterHeight = 500;
@@ -67,7 +119,7 @@ beforePan = function(oldPan, newPan) {
 
 $(document).ready(function() {
 
-    //Handles Years Buttons
+    //Handles year buttons
     $('.years')[0].addEventListener('load', function() {
         svg = $('.years').getSVG();
         years = $(svg.find('.button'));
@@ -80,9 +132,12 @@ $(document).ready(function() {
                 $(this).css('opacity', '1')
             });
 
+            //Handles button press
             element.mousedown(function() {
                 $(this).css('opacity', '1')
                 $(this).find('path').css('fill', darken(rgb2hex($(this).attr('colour')), 0.03))
+                year = $(this).attr('id')
+                drawYear(year);
             });
             element.mouseup(function() {
                 $(this).css('opacity', '0.75')
@@ -107,39 +162,6 @@ $(document).ready(function() {
 
 
         //Colours in the Map
-        svg = $('.map').getSVG();
-        constituencies = $(svg.find('path'));
-        $(constituencies).each(function(index) {
-            element = $(constituencies[index]);
-            constituency = element.attr('title')
-            for (i = 0; i < results.length; i++) {
-                if (results[i][0] == constituency) {
-                    party = results[i][1]
-                    element.addClass('location')
-                    element.attr('party', party)
-                    element.css('fill', colours[party])
-
-                    //Handles the data box, info on hover etc.
-                    element.hover(function() {
-                        if ($(this).hasClass('location')) {
-                            $('.constituency-name').text($(this).attr('title'))
-                            party = $(this).attr('party')
-                            $(this).css('opacity', '0.5')
-                            $('.constituency-party').text(parties[party])
-                            $('.hex-a').css('border-bottom-color', colours[party])
-                            $('.hex-b').css('background', colours[party])
-                            $('.hex-c').css('border-top-color', colours[party])
-                        }
-                    }, function() {
-                        $('.constituency-name').text('Constituency Name')
-                        $(this).css('opacity', '1')
-                        $('.constituency-party').text('Party')
-                        $('.hex-a').css('border-bottom-color', 'lightgrey')
-                        $('.hex-b').css('background', 'lightgrey')
-                        $('.hex-c').css('border-top-color', 'lightgrey')
-                    });
-                }
-            }
-        });
+        drawYear('2017');
     });
 });
