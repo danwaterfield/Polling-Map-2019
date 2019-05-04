@@ -51,6 +51,7 @@
   <style>
     g {
     cursor: pointer; 
+    user-select: none;
     }
   </style>
   <g
@@ -60,7 +61,6 @@
      transform="translate(-30.019895,-73.159546)">
      <g class="button">
     <path
-       class="button"
        sodipodi:type="star"
        style="fill:#1dd3a7;fill-opacity:1;fill-rule:evenodd;stroke:#d3d3d3;stroke-width:0.5291667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path1443"

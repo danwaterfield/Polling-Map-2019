@@ -13,6 +13,8 @@ colours = {
     "CHUK": "#999999"
 }
 
+isDown = false;
+
 parties = {
     "C": "Conservative",
     "DUP": "Democratic Unionist Party",
@@ -26,6 +28,15 @@ parties = {
     "Brex": "Brexit Party",
     "CHUK": "Independent Party"
 }
+
+function rgb2hex(rgb) {
+    rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+    return (rgb && rgb.length === 4) ? "#" +
+        ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) +
+        ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) +
+        ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2) : '';
+}
+
 
 //Loads in a basic csv which has constituencies + parties
 $.ajax({
@@ -55,25 +66,38 @@ beforePan = function(oldPan, newPan) {
 }
 
 $(document).ready(function() {
+
     //Handles Years Buttons
     $('.years')[0].addEventListener('load', function() {
         svg = $('.years').getSVG();
         years = $(svg.find('.button'));
-
         $(years).each(function(index) {
             element = $(years[index]);
+            element.attr('colour', $(element).find('path').css('fill'))
             element.hover(function() {
-                $(this).css('opacity', '0.5')
+                $(this).css('opacity', '0.75')
             }, function() {
                 $(this).css('opacity', '1')
             });
 
+            element.mousedown(function() {
+                $(this).css('opacity', '1')
+                $(this).find('path').css('fill', darken(rgb2hex($(this).attr('colour')), 0.03))
+            });
+            element.mouseup(function() {
+                $(this).css('opacity', '0.75')
+                $(this).find('path').css('fill', $(this).attr('colour'))
+            });
+            element.mouseleave(function() {
+                $(this).css('opacity', '1')
+                $(this).find('path').css('fill', $(this).attr('colour'))
+            });
         });
     });
 
     //Handles Main Map
     $('.map')[0].addEventListener('load', function() {
-        //Sets up Map pan
+        //Sets up Map Pan
         map = svgPanZoom('.map', {
             minZoom: 0.9,
             maxZoom: 3,
@@ -87,7 +111,6 @@ $(document).ready(function() {
         constituencies = $(svg.find('path'));
         $(constituencies).each(function(index) {
             element = $(constituencies[index]);
-
             constituency = element.attr('title')
             for (i = 0; i < results.length; i++) {
                 if (results[i][0] == constituency) {
