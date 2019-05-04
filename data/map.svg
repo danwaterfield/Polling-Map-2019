@@ -47,6 +47,11 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
+  <style>
+    g {
+    cursor: pointer; 
+    }
+  </style>
   <g
      id="scene">
     <defs
