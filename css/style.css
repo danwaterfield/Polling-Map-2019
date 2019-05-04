@@ -23,6 +23,7 @@ Refers to the data box in the top right
 	width: 500px;
 	height: 150px;
 	box-shadow: 0 3px rgba(0,0,0,0.2);
+	transition: height 0.5s ease-out;
 }
 
 /*
@@ -38,6 +39,16 @@ Refers to the year selection
 /*
 Refers to the contents of the data box, the constituency information and hex representation
 */
+.bigger {
+	height: 400px !important;
+}
+
+#chart {
+	display: none;
+	height: 200px;
+	margin-top: 60px;
+}
+
 #constituency-info {
 	margin-top: -90px;
 	margin-left: 170px;

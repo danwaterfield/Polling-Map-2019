@@ -8,6 +8,8 @@
 		<script src="js/jquery-svg.js"></script>
 		<script src="js/jquery-csv.js"></script>
 		<script src='js/panzoom.js'></script>
+		<script src='js/darken.js'></script>
+		<script src='js/chart.js'></script>
 	</head>
 	<body>
 		<object class="map" type="image/svg+xml" data="data/map.svg"></object>
@@ -22,6 +24,9 @@
 			<div id="constituency-info">
 				<b class="constituency-name">Constituency Name</b>
 				<p class="constituency-party">Party</p>
+			</div>
+			<div id="chart">
+				<canvas id="resultsChart" width="500" height="200"></canvas>
 			</div>
 			<object class="years" type="image/svg+xml" data="data/years.svg"></object>
 		</div>
