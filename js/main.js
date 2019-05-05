@@ -12,7 +12,8 @@ colours = {
     "SF": "#326760",
     "SNP": "#FEF987",
     "Brex": "#12B6CF",
-    "CHUK": "#999999"
+    "CHUK": "#999999",
+    "Alliance": "#F6CB2F"
 }
 
 parties = {
