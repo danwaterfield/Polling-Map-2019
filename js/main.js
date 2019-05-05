@@ -27,7 +27,9 @@ parties = {
     "SF": "Sinn Fein",
     "SNP": "SNP",
     "Brex": "Brexit Party",
-    "CHUK": "Independent Party"
+    "CHUK": "Independent Party",
+    "SDLP": "SDLP",
+    "Alliance": "Alliance"
 }
 
 change_constituency = true;
