@@ -168,7 +168,6 @@ function drawYear(year) {
         for (i = 0; i < elections.length; i++) {
             if (elections[i][0] == constituency) {
                 party = elections[i][1]
-                element.addClass('location')
                 element.attr('party', party)
                 element.css('fill', colours[party])
 
@@ -263,6 +262,19 @@ beforePan = function(oldPan, newPan) {
     return customPan
 }
 
+$('.map')[0].addEventListener('load', function() {
+    $(document).click(function() {
+        console.log('test')
+    });
+    //Sets up Map Pan
+    map = svgPanZoom('.map', {
+        minZoom: 0.9,
+        maxZoom: 3,
+        beforePan: beforePan
+    });
+    map.zoom(0.9)
+});
+
 $(document).ready(function() {
     //Handles year buttons
     $('.years')[0].addEventListener('load', function() {
@@ -296,16 +308,5 @@ $(document).ready(function() {
     });
 
     //Handles Main Map
-    $('.map')[0].addEventListener('load', function() {
-        $(document).click(function() {
-            console.log('test')
-        });
-        //Sets up Map Pan
-        map = svgPanZoom('.map', {
-            minZoom: 0.9,
-            maxZoom: 3,
-            beforePan: beforePan
-        });
-        map.zoom(0.9)
-    });
+
 });
