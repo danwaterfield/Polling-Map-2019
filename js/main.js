@@ -156,6 +156,13 @@ function drawElection(constituency) {
 
 function drawYear(year) {
     current_year = year;
+    svg = $('.years').getSVG();
+    years = $(svg.find('.button'));
+    $(years).each(function(index) {
+        $(years[index]).find('path').css('fill', $(years[index]).attr('colour'))
+    });
+    year_button = $(svg.find('#' + current_year));
+    $(year_button).find('path').css('fill', darken(rgb2hex($(year_button).attr('colour')), 0.2))
     if ($('#resultsChart').is(":visible")) {
         drawElection(current_constituency);
     }
@@ -292,17 +299,8 @@ $(document).ready(function() {
             //Handles button press
             element.mousedown(function() {
                 $(this).css('opacity', '1')
-                $(this).find('path').css('fill', darken(rgb2hex($(this).attr('colour')), 0.03))
                 year = $(this).attr('id')
                 drawYear(year);
-            });
-            element.mouseup(function() {
-                $(this).css('opacity', '0.75')
-                $(this).find('path').css('fill', $(this).attr('colour'))
-            });
-            element.mouseleave(function() {
-                $(this).css('opacity', '1')
-                $(this).find('path').css('fill', $(this).attr('colour'))
             });
         });
     });

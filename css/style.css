@@ -36,6 +36,13 @@ Refers to the year selection
 	width: 120px;
 }
 
+.sources {
+	z-index: 600;
+	color: darkgrey;
+	position: absolute;
+	bottom: -20px;
+}
+
 /*
 Refers to the contents of the data box, the constituency information and hex representation
 */
